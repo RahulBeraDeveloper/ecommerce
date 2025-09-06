@@ -70,8 +70,7 @@ app.use(bodyParser.json({ limit: "2mb" }));
 // app.use(cors());
 app.use(
   cors({
-    origin: ["https://ecommercefrontend-ztdj.onrender.com"], // your frontend domain
-    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+    origin:"https://ecommercefrontend-ztdj.onrender.com/", // your frontend domain
     credentials: true,
   })
 );
