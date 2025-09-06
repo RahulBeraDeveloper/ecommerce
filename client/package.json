@@ -38,7 +38,6 @@
     "react-swiper": "^0.1.5",
     "react-toastify": "^10.0.5",
     "redux": "^5.0.1",
-    "redux-devtools-extension": "^2.13.9",
     "slick-carousel": "^1.8.1",
     "styled-components": "^6.1.13",
     "sweetalert": "^2.1.2",
