@@ -81,7 +81,7 @@ app.use(bodyParser.json({ limit: "2mb" }));
 // app.use(cors());
 app.use(
   cors({
-    origin:"https://ecommercefrontend-ztdj.onrender.com/", // your frontend domain
+    origin:"https://ecommercefrontend-ztdj.onrender.com", // your frontend domain
     credentials: true,
   })
 );
