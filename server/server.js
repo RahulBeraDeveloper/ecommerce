@@ -67,7 +67,14 @@ mongoose
 // middlewares
 app.use(morgan("dev"));
 app.use(bodyParser.json({ limit: "2mb" }));
-app.use(cors());
+// app.use(cors());
+app.use(
+  cors({
+    origin: ["https://ecommercefrontend-ztdj.onrender.com"], // your frontend domain
+    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+    credentials: true,
+  })
+);
 
 // routes middleware
 readdirSync("./routes").map((r) => app.use("/api", require("./routes/" + r)));
