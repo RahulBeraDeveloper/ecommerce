@@ -55,14 +55,25 @@ const express = require("express");
 const app = express();
 
 // db
+// mongoose
+//   .connect(process.env.DATABASE, {
+//     useNewUrlParser: true,
+//     useCreateIndex: true,
+//     useFindAndModify: true,
+//   })
+//   .then(() => console.log("DB CONNECTED"))
+//   .catch((err) => console.log("DB CONNECTION ERR", err));
 mongoose
   .connect(process.env.DATABASE, {
     useNewUrlParser: true,
-    useCreateIndex: true,
-    useFindAndModify: true,
+    useUnifiedTopology: true,
+    serverSelectionTimeoutMS: 10000, // 10s timeout
   })
-  .then(() => console.log("DB CONNECTED"))
-  .catch((err) => console.log("DB CONNECTION ERR", err));
+  .then(() => console.log("✅ MongoDB Connected"))
+  .catch((err) => {
+    console.error("❌ DB CONNECTION ERROR:", err.message);
+    process.exit(1); // crash app immediately so Render restarts
+  });
 
 // middlewares
 app.use(morgan("dev"));
